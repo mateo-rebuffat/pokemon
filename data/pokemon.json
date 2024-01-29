@@ -1,0 +1,439 @@
+[
+    {
+        "name": "Bulbasaur",
+        "types": [
+            5,
+            8
+        ],
+        "attack_stat": 49,
+        "defense_stat": 49,
+        "evolution": "Ivysaur",
+        "evolution_level": 15
+    },
+    {
+        "name": "Ivysaur",
+        "types": [
+            5,
+            8
+        ],
+        "attack_stat": 62,
+        "defense_stat": 63,
+        "evolution": "Venusaur",
+        "evolution_level": 30
+    },
+    {
+        "name": "Venusaur",
+        "types": [
+            5,
+            8
+        ],
+        "attack_stat": 82,
+        "defense_stat": 83
+    },
+    {
+        "name": "Charmander",
+        "types": [
+            2,
+            0
+        ],
+        "attack_stat": 52,
+        "defense_stat": 43,
+        "evolution": "Charmeleon",
+        "evolution_level": 15
+    },
+    {
+        "name": "Charmeleon",
+        "types": [
+            2,
+            0
+        ],
+        "attack_stat": 64,
+        "defense_stat": 58,
+        "evolution": "Charizard",
+        "evolution_level": 30
+    },
+    {
+        "name": "Charizard",
+        "types": [
+            2,
+            10
+        ],
+        "attack_stat": 84,
+        "defense_stat": 78
+    },
+    {
+        "name": "Squirtle",
+        "types": [
+            3,
+            0
+        ],
+        "attack_stat": 48,
+        "defense_stat": 65,
+        "evolution": "Wartortle",
+        "evolution_level": 15
+    },
+    {
+        "name": "Wartortle",
+        "types": [
+            3,
+            0
+        ],
+        "attack_stat": 63,
+        "defense_stat": 80,
+        "evolution": "Blastoise",
+        "evolution_level": 30
+    },
+    {
+        "name": "Blastoise",
+        "types": [
+            3,
+            0
+        ],
+        "attack_stat": 83,
+        "defense_stat": 100
+    },
+    {
+        "name": "Caterpie",
+        "types": [
+            12,
+            0
+        ],
+        "attack_stat": 30,
+        "defense_stat": 35,
+        "evolution": "Metapod",
+        "evolution_level": 15
+    },
+    {
+        "name": "Metapod",
+        "types": [
+            12,
+            0
+        ],
+        "attack_stat": 20,
+        "defense_stat": 55,
+        "evolution": "Butterfree",
+        "evolution_level": 30
+    },
+    {
+        "name": "Butterfree",
+        "types": [
+            12,
+            10
+        ],
+        "attack_stat": 45,
+        "defense_stat": 50
+    },
+    {
+        "name": "Spearow",
+        "types": [
+            1,
+            10
+        ],
+        "attack_stat": 60,
+        "defense_stat": 30,
+        "evolution": "Fearow",
+        "evolution_level": 15
+    },
+    {
+        "name": "Fearow",
+        "types": [
+            1,
+            10
+        ],
+        "attack_stat": 90,
+        "defense_stat": 65
+    },
+    {
+        "name": "Ekans",
+        "types": [
+            8,
+            0
+        ],
+        "attack_stat": 60,
+        "defense_stat": 44,
+        "evolution": "Arbok",
+        "evolution_level": 15
+    },
+    {
+        "name": "Arbok",
+        "types": [
+            8,
+            0
+        ],
+        "attack_stat": 85,
+        "defense_stat": 69
+    },
+    {
+        "name": "Pikachu",
+        "types": [
+            4,
+            0
+        ],
+        "attack_stat": 55,
+        "defense_stat": 40,
+        "evolution": "Raichu",
+        "evolution_level": 30
+    },
+    {
+        "name": "Raichu",
+        "types": [
+            4,
+            0
+        ],
+        "attack_stat": 90,
+        "defense_stat": 55
+    },
+    {
+        "name": "Aggron",
+        "types": [
+            17,
+            13
+        ],
+        "attack_stat": 110,
+        "defense_stat": 180
+    },
+    {
+        "name": "Articuno",
+        "types": [
+            6,
+            10
+        ],
+        "attack_stat": 85,
+        "defense_stat": 100
+    },
+    {
+        "name": "Diglett",
+        "types": [
+            9,
+            0
+        ],
+        "attack_stat": 55,
+        "defense_stat": 25,
+        "evolution": "Dugtrio",
+        "evolution_level": 15
+    },
+    {
+        "name": "Dragonair",
+        "types": [
+            15,
+            0
+        ],
+        "attack_stat": 84,
+        "defense_stat": 65,
+        "evolution": "Dragonite",
+        "evolution_level": 30
+    },
+    {
+        "name": "Dragonite",
+        "types": [
+            15,
+            10
+        ],
+        "attack_stat": 134,
+        "defense_stat": 95
+    },
+    {
+        "name": "Dratini",
+        "types": [
+            15,
+            0
+        ],
+        "attack_stat": 64,
+        "defense_stat": 45,
+        "evolution": "Dragonair",
+        "evolution_level": 15
+    },
+    {
+        "name": "Dugtrio",
+        "types": [
+            9,
+            0
+        ],
+        "attack_stat": 100,
+        "defense_stat": 50
+    },
+    {
+        "name": "Eevee",
+        "types": [
+            1,
+            0
+        ],
+        "attack_stat": 55,
+        "defense_stat": 50,
+        "evolution": "Umbreon",
+        "evolution_level": 15
+    },
+    {
+        "name": "Gastly",
+        "types": [
+            14,
+            4
+        ],
+        "attack_stat": 35,
+        "defense_stat": 30,
+        "evolution": "Haunter",
+        "evolution_level": 15
+    },
+    {
+        "name": "Gengar",
+        "types": [
+            14,
+            4
+        ],
+        "attack_stat": 65,
+        "defense_stat": 60
+    },
+    {
+        "name": "Geodude",
+        "types": [
+            13,
+            9
+        ],
+        "attack_stat": 80,
+        "defense_stat": 100,
+        "evolution": "Graveler",
+        "evolution_level": 15
+    },
+    {
+        "name": "Golem",
+        "types": [
+            13,
+            9
+        ],
+        "attack_stat": 120,
+        "defense_stat": 130
+    },
+    {
+        "name": "Graveler",
+        "types": [
+            13,
+            9
+        ],
+        "attack_stat": 95,
+        "defense_stat": 115
+    },
+    {
+        "name": "Haunter",
+        "types": [
+            14,
+            4
+        ],
+        "attack_stat": 50,
+        "defense_stat": 45,
+        "evolution": "Gengar",
+        "evolution_level": 30
+    },
+    {
+        "name": "Abra",
+        "types": [
+            11,
+            0
+        ],
+        "attack_stat": 20,
+        "defense_stat": 15,
+        "evolution": "Kadabra",
+        "evolution_level": 15
+    },
+    {
+        "name": "Alakazam",
+        "types": [
+            11,
+            0
+        ],
+        "attack_stat": 50,
+        "defense_stat": 45
+    },
+    {
+        "name": "Aron",
+        "types": [
+            13,
+            9
+        ],
+        "attack_stat": 70,
+        "defense_stat": 100,
+        "evolution": "Lairon",
+        "evolution_level": 15
+    },
+    {
+        "name": "Kadabra",
+        "types": [
+            11,
+            0
+        ],
+        "attack_stat": 35,
+        "defense_stat": 30,
+        "evolution": "Alakazam",
+        "evolution_level": 15
+    },
+    {
+        "name": "Machamp",
+        "types": [
+            7,
+            0
+        ],
+        "attack_stat": 130,
+        "defense_stat": 80
+    },
+    {
+        "name": "Machoke",
+        "types": [
+            7,
+            0
+        ],
+        "attack_stat": 80,
+        "defense_stat": 50,
+        "evolution": "Machamp",
+        "evolution_level": 15
+    },
+    {
+        "name": "Machop",
+        "types": [
+            7,
+            0
+        ],
+        "attack_stat": 50,
+        "defense_stat": 35,
+        "evolution": "Machoke",
+        "evolution_level": 15
+    },
+    {
+        "name": "Pichu",
+        "types": [
+            4,
+            0
+        ],
+        "attack_stat": 40,
+        "defense_stat": 15,
+        "evolution": "Pikachu",
+        "evolution_level": 15
+    },
+    {
+        "name": "Rattata",
+        "types": [
+            1,
+            0
+        ],
+        "attack_stat": 56,
+        "defense_stat": 35,
+        "evolution": "Raticate",
+        "evolution_level": 15
+    },
+    {
+        "name": "Raticate",
+        "types": [
+            1,
+            0
+        ],
+        "attack_stat": 81,
+        "defense_stat": 60
+    },
+    {
+        "name": "Umbreon",
+        "types": [
+            16,
+            0
+        ],
+        "attack_stat": 65,
+        "defense_stat": 110
+    }
+]
