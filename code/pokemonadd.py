@@ -42,10 +42,10 @@ class PokemonAdd:
         )
 
         # Define the positions for input boxes and buttons
-        self.name_box_pos = (self.window_size[0] * 0.2, self.window_size[1] * 0.1)
-        self.type_box_pos = (self.window_size[0] * 0.7, self.window_size[1] * 0.1)
-        self.atk_box_pos = (self.window_size[0] * 0.2, self.window_size[1] * 0.4)
-        self.def_box_pos = (self.window_size[0] * 0.7, self.window_size[1] * 0.4)
+        self.name_box_pos = (self.window_size[0] * 0.7, self.window_size[1] * 0.4)
+        self.type_box_pos = (self.window_size[0] * 0.7, self.window_size[1] * 0.2)
+        self.atk_box_pos = (self.window_size[0] * 0.3, self.window_size[1] * 0.4)
+        self.def_box_pos = (self.window_size[0] * 0.3, self.window_size[1] * 0.2)
         self.select_sprite_button_pos = (
             self.window_size[0] * 0.3,
             self.window_size[1] * 0.6,

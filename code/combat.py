@@ -1,3 +1,4 @@
+# LIGNE 51 POUR MODIFIER TAILLE FONT
 import os # REDUNDANT
 import json
 from random import choice
@@ -47,7 +48,7 @@ class Combat:
         )
         self.background = pygame.transform.scale(self.background, (800, 600))
         self.custom_font_path = os.path.join(font_directory, "pkmn.ttf")
-        self.font = pygame.font.Font(self.custom_font_path, 16)
+        self.font = pygame.font.Font(self.custom_font_path, 13)
 
         pygame.mixer.music.load(os.path.join(music_directory, "battle.wav"))
         pygame.mixer.music.set_volume(0.5)
@@ -138,34 +139,32 @@ class Combat:
                 True,
                 (0, 0 ,0)
             )
-            self.screen.blit(player_pokemon_name_surface, (605, 334))
-            player_pokemon_health_bar_width = 96 * (self.player_pokemon.health / 20)  # Adjust length based on health
-            player_pokemon_health_bar_height = 6  # Change this value to adjust thickness
-            player_pokemon_health_bar = pygame.draw.rect(
-                self.screen,
-                (0, 255, 0),
-                (633, 362, player_pokemon_health_bar_width, player_pokemon_health_bar_height)
+            self.screen.blit(player_pokemon_name_surface, (542, 344))
+            player_pokemon_health_surface = self.font.render(
+                f"{self.player_pokemon.health}/20",
+                True,
+                (0, 0, 0)
             )
+            self.screen.blit(player_pokemon_health_surface, (677, 352))
             player_pokemon_level_surface = self.font.render(
                 f"LVL {self.player_pokemon.level}",
                 True,
                 (0, 0 ,0)
             )
-            self.screen.blit(player_pokemon_level_surface, (635, 374))
+            self.screen.blit(player_pokemon_level_surface, (545, 374))
 
             enemy_pokemon_name_surface = self.font.render(
                 self.enemy_pokemon.name,
                 True,
                 (0, 0 ,0)
             )
-            self.screen.blit(enemy_pokemon_name_surface, (99, 59))
-            enemy_pokemon_health_bar_width = 96 * (self.enemy_pokemon.health / 20)  # Adjust length based on health
-            enemy_pokemon_health_bar_height = 6  # Change this value to adjust thickness
-            enemy_pokemon_health_bar = pygame.draw.rect(
-            self.screen,
-            (0, 255, 0),
-            (128, 84, enemy_pokemon_health_bar_width, enemy_pokemon_health_bar_height)
-        )
+            self.screen.blit(enemy_pokemon_name_surface, (99, 66))
+            enemy_pokemon_health_surface = self.font.render(
+                f"{self.enemy_pokemon.health}/20",
+                True,
+                (0, 0, 0)
+            )
+            self.screen.blit(enemy_pokemon_health_surface, (228, 74))
             enemy_pokemon_level_surface = self.font.render(
                 f"LVL {self.enemy_pokemon.level}",
                 True,

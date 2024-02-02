@@ -1,17 +1,5 @@
 [
     {
-        "name": "Bulbasaur",
-        "types": [
-            5,
-            8
-        ],
-        "attack_stat": 49,
-        "defense_stat": 49,
-        "evolution": "Ivysaur",
-        "evolution_level": 15,
-        "level": 6
-    },
-    {
         "name": "Blastoise",
         "types": [
             3,
@@ -19,6 +7,6 @@
         ],
         "attack_stat": 83,
         "defense_stat": 100,
-        "level": 5
+        "level": 6
     }
 ]
