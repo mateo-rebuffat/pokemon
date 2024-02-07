@@ -30,7 +30,7 @@ class MainMenu:
         self.logo = pygame.transform.scale(self.logo, (500, 200))
         self.logo_rect = self.logo.get_rect()
         self.logo_rect.center = (self.window_size[0] // 2, 120)
-        logo_speed = 50
+
         # Arrière-plan du menu
         self.background = pygame.image.load(
             os.path.join(backgrounds_directory, "mainmenu.jpg")
@@ -41,15 +41,15 @@ class MainMenu:
         self.background_position = 0
 
         # Animation du logo
-        self.logo_bounce = 0
-        self.bounce_direction = 1
+        self.logo_bounce = 4
+        self.bounce_direction = 3
 
         # Bouton sélectionné
         self.selected_button = 0
 
         # Chargement de la musique
         pygame.mixer.music.load(os.path.join(music_directory, "mainmenumusic.wav"))
-        pygame.mixer.music.set_volume(0.01)
+        pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play(-1)
 
         # Boutons du menu
@@ -113,12 +113,12 @@ class MainMenu:
             self.handle_events()
 
             # Animation de l'arrière-plan
-            self.background_position -= 2
+            self.background_position -= 1
             if self.background_position <= -self.window_size[0]:
                 self.background_position = 0
 
             # Animation du logo
-            bounce_speed = 0.5
+            bounce_speed = 0.2
             max_bounce = 10
             if self.logo_bounce > max_bounce:
                 self.bounce_direction = -1

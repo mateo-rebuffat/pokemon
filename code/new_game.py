@@ -19,6 +19,7 @@ class NewGame:
         pygame.init()
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("New Game - Pokemon La Plateforme")
+        self.background_position = 0  # Déclaration de l'attribut background_position
 
         self.custom_font_path = os.path.join(font_directory, "pkmn.ttf")
         self.font = pygame.font.Font(self.custom_font_path, 16)
@@ -41,11 +42,11 @@ class NewGame:
         pygame.mixer.music.play(-1)
 
         self.buttons = {
-            "PREVIOUS": pygame.Rect(220 - 10, 230 - 10, 120, 60),
-            "NEXT": pygame.Rect(480 - 10, 230 - 10, 120, 60),
-            "CONFIRM": pygame.Rect(350 - 10, 300 - 10, 120, 60),
-            "YES": pygame.Rect(250 - 10, 300 - 10, 120, 60),
-            "NO": pygame.Rect(450 - 10, 300 - 10, 120, 60),
+            "PREVIOUS": pygame.Rect(100, 200, 150, 50),  # Nouvelle taille et position pour "PREVIOUS"
+            "NEXT": pygame.Rect(550, 200, 150, 50),  # Nouvelle taille et position pour "NEXT"
+            "CONFIRM": pygame.Rect(325, 400, 150, 50),  # Nouvelle taille et position pour "CONFIRM"
+            "YES": pygame.Rect(200, 400, 100, 50),  # Nouvelle taille et position pour "YES"
+            "NO": pygame.Rect(500, 400, 100, 50),  # Nouvelle taille et position pour "NO"
         }
 
         self.run()
@@ -115,7 +116,7 @@ class NewGame:
         new_save = [self.pokemons[pokemon_index]]
         with open(pokedex_path, "w") as file:
             json.dump(new_save, file, indent=4)
-        new_save[0]["level"] = 5
+        new_save[0]["level"] = 5 # Pour montrer évolution
         with open(save_path, "w") as file:
             json.dump(new_save, file, indent=4)
 
@@ -131,38 +132,50 @@ class NewGame:
         title_text = self.font.render("CHOOSE YOUR POKEMON !", True, (0, 0, 0))
         title_rect = title_text.get_rect(center=(self.screen.get_width() // 2, 100))
 
+        clock = pygame.time.Clock()  # Ajout d'un objet clock pour contrôler la vitesse de rafraîchissement
+
         while self.running:
-            self.screen.blit(self.background, (0, 0))
+            self.screen.blit(self.background, (self.background_position, 0))
+            self.screen.blit(self.background, (self.background_position + self.screen.get_width(), 0))
+
             self.screen.blit(title_text, title_rect)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     clicked_button = self.handle_button_click(event.pos)
                     if clicked_button == "PREVIOUS":
-                        self.current_selection = (self.current_selection - 1) % len(
-                            self.pokemon_names
-                        )
+                        self.current_selection = (self.current_selection - 1) % len(self.pokemon_names)
                     elif clicked_button == "NEXT":
-                        self.current_selection = (self.current_selection + 1) % len(
-                            self.pokemon_names
-                        )
+                        self.current_selection = (self.current_selection + 1) % len(self.pokemon_names)
                     elif clicked_button == "CONFIRM":
                         if self.is_save_file_non_empty():
                             self.show_popup = True
                         else:
                             self.create_save(self.current_selection)
+                            self.running = False
                             self.start_combat()
                     elif clicked_button == "YES":
                         self.show_popup = False
                         self.create_save(self.current_selection)
+                        self.running = False
                         self.start_combat()
                     elif clicked_button == "NO":
                         self.show_popup = False
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        self.running = False
 
             self.draw_pokemon_sprites()
             self.draw_buttons()
             self.draw_popup()
+
             pygame.display.flip()
 
-        pygame.quit()
+            # Mettre à jour la position de l'arrière-plan
+            self.background_position -= 1
+            if self.background_position <= -self.screen.get_width():
+                self.background_position = 0
+
+            clock.tick(60)  # Maintenir une vitesse constante de rafraîchissement

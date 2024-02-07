@@ -24,20 +24,24 @@ class ResumeGame:
                 os.path.join(backgrounds_directory, "newgame.jpg")
             )
             self.background = pygame.transform.scale(self.background, (800, 600))
+            self.scroll_speed = 1  # Ajoutez cette ligne dans le constructeur de ResumeGame
 
             pygame.mixer.music.load(os.path.join(music_directory, "newgamemusic.wav"))
             pygame.mixer.music.set_volume(0.5)
             pygame.mixer.music.play(-1)
 
             self.buttons = {
-                "PREVIOUS": pygame.Rect(220 - 10, 230 - 10, 120, 60),
-                "NEXT": pygame.Rect(480 - 10, 230 - 10, 120, 60),
-                "CONFIRM": pygame.Rect(350 - 10, 300 - 10, 120, 60),
+                "PREVIOUS": pygame.Rect(100, 200, 150, 50),  # Nouvelle taille et position pour "PREVIOUS"
+                "NEXT": pygame.Rect(550, 200, 150, 50),  # Nouvelle taille et position pour "NEXT"
+                "CONFIRM": pygame.Rect(325, 400, 150, 50),  # Nouvelle taille et position pour "CONFIRM"
             }
+
+            self.background_position = 0  # Ajoutez cette ligne pour déclarer background_position
 
             self.run()
         except Exception as e:
             print(f"Error in ResumeGame __init__: {e}")
+
 
 
     def load_data(self):
@@ -84,11 +88,12 @@ class ResumeGame:
     def start_combat(self, pokemon_index):
         Combat(self.saved_pokemons[pokemon_index])
 
-
     def run(self):
         try:
             title_text = self.font.render("SELECT YOUR POKEMON !", True, (0, 0, 0))
             title_rect = title_text.get_rect(center=(800 // 2, 100))
+
+            clock = pygame.time.Clock()
 
             while self.running:
                 for event in pygame.event.get():
@@ -101,15 +106,27 @@ class ResumeGame:
                         elif clicked_button == "NEXT":
                             self.current_selection = (self.current_selection + 1) % len(self.pokemon_names)
                         elif clicked_button == "CONFIRM":
+                            self.running = False
                             self.start_combat(self.current_selection)
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_ESCAPE:
+                            self.running = False
 
-                self.screen.blit(self.background, (0, 0))
+                # Déplacement du fond
+                self.screen.blit(self.background, (self.background_position, 0))
+                self.screen.blit(self.background,
+                                 (self.background_position + self.background.get_width(), 0))
+                self.background_position -= self.scroll_speed
+
+                # Réinitialisation de la position du fond
+                if self.background_position <= -self.background.get_width():
+                    self.background_position = 0
+
                 self.screen.blit(title_text, title_rect)
                 self.draw_pokemon_sprites()
                 self.draw_buttons()
                 pygame.display.flip()
+                clock.tick(60)
         except Exception as e:
             print(f"Error in ResumeGame run method: {e}")
             self.running = False
-
-        pygame.quit()

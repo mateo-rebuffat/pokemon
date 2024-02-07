@@ -32,6 +32,7 @@ class Pokedex:
         pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play(-1)
 
+        self.running = True
         self.run()
 
     def load_data(self):
@@ -109,19 +110,18 @@ class Pokedex:
     def handle_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return False
+                self.running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 self.handle_mouse_click(event.pos)
-        return True
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
 
     def run(self):
-        running = True
-        while running:
-            running = self.handle_events()
+        while self.running:
+            self.handle_events()
             self.render()
             self.clock.tick(60)  # Cap the frame rate at 60 FPS
-
-        pygame.quit()
 
 
 # Main execution
