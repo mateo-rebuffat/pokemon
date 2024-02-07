@@ -1,20 +1,33 @@
 [
     {
-        "name": "Blastoise",
+        "name": "Wartortle",
         "types": [
             3,
             0
         ],
-        "attack_stat": 83,
-        "defense_stat": 100
+        "attack_stat": 63,
+        "defense_stat": 80,
+        "evolution": "Blastoise",
+        "evolution_level": 30
     },
     {
-        "name": "Raticate",
+        "name": "Caterpie",
         "types": [
-            1,
+            12,
             0
         ],
-        "attack_stat": 81,
-        "defense_stat": 60
+        "attack_stat": 30,
+        "defense_stat": 35,
+        "evolution": "Metapod",
+        "evolution_level": 15
+    },
+    {
+        "name": "Graveler",
+        "types": [
+            13,
+            9
+        ],
+        "attack_stat": 95,
+        "defense_stat": 115
     }
 ]
